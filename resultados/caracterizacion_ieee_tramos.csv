@@ -1,0 +1,4 @@
+tramo,transacciones,fraudes,tasa,dia_ini,dia_fin,monto_medio
+Entrenamiento,413378,14538,0.0352,1.0,120.8101,134.6049
+Validación,88581,3042,0.0343,120.8102,152.2204,134.8765
+Prueba,88581,3083,0.0348,152.2208,182.9992,137.1485

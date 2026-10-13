@@ -1,0 +1,25 @@
+variable,categoria,transacciones,fraudes,tasa
+ProductCD,C,68519,8008,0.1169
+ProductCD,H,33024,1574,0.0477
+ProductCD,R,37699,1426,0.0378
+ProductCD,S,11628,686,0.059
+ProductCD,W,439670,8969,0.0204
+card4,american express,8328,239,0.0287
+card4,discover,6651,514,0.0773
+card4,mastercard,189217,6496,0.0343
+card4,visa,384767,13373,0.0348
+card6,charge card,15,0,0.0
+card6,credit,148986,9950,0.0668
+card6,debit,439938,10674,0.0243
+card6,debit or credit,30,0,0.0
+DeviceType,desktop,85165,5554,0.0652
+DeviceType,mobile,55645,5657,0.1017
+franja,00–05 h,142666,5464,0.0383
+franja,06–11 h,25235,1782,0.0706
+franja,12–17 h,174374,4816,0.0276
+franja,18–23 h,248265,8601,0.0346
+monto_banda,≤50,204524,7833,0.0383
+monto_banda,50–100,164095,4788,0.0292
+monto_banda,100–250,158907,4880,0.0307
+monto_banda,250–1 000,55747,2983,0.0535
+monto_banda,>1 000,7267,179,0.0246

@@ -1,0 +1,121 @@
+dataset,modelo,balanceo,banda,fraudes,detectados,monto,monto_no_detectado
+ieee_cis,Random Forest,SMOTE,100–250,683.0,229.67,102532.87,67110.17
+ieee_cis,Random Forest,SMOTE,250–1 000,422.0,140.33,216539.14,145560.18
+ieee_cis,Random Forest,SMOTE,50–100,678.0,257.0,49694.34,30546.28
+ieee_cis,Random Forest,SMOTE,>1 000,43.0,5.67,65985.93,56968.6
+ieee_cis,Random Forest,SMOTE,≤50,1257.0,715.0,34856.24,17520.92
+ieee_cis,Random Forest,pesos,100–250,683.0,242.0,102532.87,65747.17
+ieee_cis,Random Forest,pesos,250–1 000,422.0,139.0,216539.14,152001.81
+ieee_cis,Random Forest,pesos,50–100,678.0,240.33,49694.34,31756.2
+ieee_cis,Random Forest,pesos,>1 000,43.0,3.0,65985.93,61027.93
+ieee_cis,Random Forest,pesos,≤50,1257.0,709.33,34856.24,17748.37
+ieee_cis,Random Forest,sin_balanceo,100–250,683.0,194.0,102532.87,73010.75
+ieee_cis,Random Forest,sin_balanceo,250–1 000,422.0,119.67,216539.14,159332.31
+ieee_cis,Random Forest,sin_balanceo,50–100,678.0,230.0,49694.34,32528.28
+ieee_cis,Random Forest,sin_balanceo,>1 000,43.0,4.0,65985.93,59937.93
+ieee_cis,Random Forest,sin_balanceo,≤50,1257.0,666.0,34856.24,19119.45
+ieee_cis,Regresión logística,SMOTE,100–250,683.0,145.0,102532.87,82706.8
+ieee_cis,Regresión logística,SMOTE,250–1 000,422.0,89.67,216539.14,162076.59
+ieee_cis,Regresión logística,SMOTE,50–100,678.0,180.0,49694.34,36858.47
+ieee_cis,Regresión logística,SMOTE,>1 000,43.0,4.33,65985.93,57400.26
+ieee_cis,Regresión logística,SMOTE,≤50,1257.0,538.67,34856.24,21968.14
+ieee_cis,Regresión logística,pesos,100–250,683.0,137.0,102532.87,84026.97
+ieee_cis,Regresión logística,pesos,250–1 000,422.0,93.0,216539.14,157522.72
+ieee_cis,Regresión logística,pesos,50–100,678.0,168.0,49694.34,37842.69
+ieee_cis,Regresión logística,pesos,>1 000,43.0,6.0,65985.93,54706.93
+ieee_cis,Regresión logística,pesos,≤50,1257.0,531.0,34856.24,22027.17
+ieee_cis,Regresión logística,sin_balanceo,100–250,683.0,146.0,102532.87,82572.96
+ieee_cis,Regresión logística,sin_balanceo,250–1 000,422.0,87.0,216539.14,164649.91
+ieee_cis,Regresión logística,sin_balanceo,50–100,678.0,189.0,49694.34,36196.84
+ieee_cis,Regresión logística,sin_balanceo,>1 000,43.0,4.0,65985.93,58008.93
+ieee_cis,Regresión logística,sin_balanceo,≤50,1257.0,577.0,34856.24,20841.81
+ieee_cis,XGBoost,SMOTE,100–250,683.0,243.67,102532.87,66058.7
+ieee_cis,XGBoost,SMOTE,250–1 000,422.0,148.67,216539.14,140041.21
+ieee_cis,XGBoost,SMOTE,50–100,678.0,261.33,49694.34,30296.05
+ieee_cis,XGBoost,SMOTE,>1 000,43.0,5.33,65985.93,56823.6
+ieee_cis,XGBoost,SMOTE,≤50,1257.0,693.33,34856.24,17765.88
+ieee_cis,XGBoost,pesos,100–250,683.0,247.67,102532.87,65214.78
+ieee_cis,XGBoost,pesos,250–1 000,422.0,144.67,216539.14,147861.34
+ieee_cis,XGBoost,pesos,50–100,678.0,257.0,49694.34,30534.31
+ieee_cis,XGBoost,pesos,>1 000,43.0,7.0,65985.93,53676.81
+ieee_cis,XGBoost,pesos,≤50,1257.0,699.0,34856.24,17631.37
+ieee_cis,XGBoost,sin_balanceo,100–250,683.0,251.0,102532.87,64712.01
+ieee_cis,XGBoost,sin_balanceo,250–1 000,422.0,165.67,216539.14,130656.25
+ieee_cis,XGBoost,sin_balanceo,50–100,678.0,268.0,49694.34,29972.41
+ieee_cis,XGBoost,sin_balanceo,>1 000,43.0,5.0,65985.93,56826.93
+ieee_cis,XGBoost,sin_balanceo,≤50,1257.0,710.33,34856.24,17302.26
+ieee_cis,Árbol de decisión,SMOTE,100–250,683.0,205.67,102532.87,72122.06
+ieee_cis,Árbol de decisión,SMOTE,250–1 000,422.0,106.0,216539.14,166548.37
+ieee_cis,Árbol de decisión,SMOTE,50–100,678.0,215.67,49694.34,33889.19
+ieee_cis,Árbol de decisión,SMOTE,>1 000,43.0,1.0,65985.93,64133.26
+ieee_cis,Árbol de decisión,SMOTE,≤50,1257.0,573.33,34856.24,20802.26
+ieee_cis,Árbol de decisión,pesos,100–250,683.0,243.0,102532.87,66045.43
+ieee_cis,Árbol de decisión,pesos,250–1 000,422.0,131.0,216539.14,150162.84
+ieee_cis,Árbol de decisión,pesos,50–100,678.0,274.33,49694.34,29249.47
+ieee_cis,Árbol de decisión,pesos,>1 000,43.0,2.0,65985.93,62488.93
+ieee_cis,Árbol de decisión,pesos,≤50,1257.0,664.0,34856.24,17981.35
+ieee_cis,Árbol de decisión,sin_balanceo,100–250,683.0,227.0,102532.87,69390.74
+ieee_cis,Árbol de decisión,sin_balanceo,250–1 000,422.0,120.0,216539.14,160655.76
+ieee_cis,Árbol de decisión,sin_balanceo,50–100,678.0,230.0,49694.34,32384.07
+ieee_cis,Árbol de decisión,sin_balanceo,>1 000,43.0,7.0,65985.93,54873.93
+ieee_cis,Árbol de decisión,sin_balanceo,≤50,1257.0,662.0,34856.24,18928.4
+ulb,Random Forest,SMOTE,100–250,8.0,7.0,1355.87,229.48
+ulb,Random Forest,SMOTE,250–1 000,9.67,7.0,4762.54,1307.44
+ulb,Random Forest,SMOTE,50–100,8.0,7.33,708.42,66.66
+ulb,Random Forest,SMOTE,>1 000,1.33,1.0,1680.15,365.66
+ulb,Random Forest,SMOTE,≤50,40.67,31.67,370.53,99.87
+ulb,Random Forest,pesos,100–250,8.0,7.0,1355.87,229.48
+ulb,Random Forest,pesos,250–1 000,9.67,7.0,4762.54,1307.44
+ulb,Random Forest,pesos,50–100,8.0,8.0,708.42,0.0
+ulb,Random Forest,pesos,>1 000,1.33,1.0,1680.15,365.66
+ulb,Random Forest,pesos,≤50,40.67,32.33,370.53,86.2
+ulb,Random Forest,sin_balanceo,100–250,8.0,7.0,1355.87,229.48
+ulb,Random Forest,sin_balanceo,250–1 000,9.67,7.0,4762.54,1307.44
+ulb,Random Forest,sin_balanceo,50–100,8.0,8.0,708.42,0.0
+ulb,Random Forest,sin_balanceo,>1 000,1.33,1.0,1680.15,365.66
+ulb,Random Forest,sin_balanceo,≤50,40.67,30.67,370.53,96.02
+ulb,Regresión logística,SMOTE,100–250,8.0,7.33,1355.87,149.5
+ulb,Regresión logística,SMOTE,250–1 000,9.67,7.0,4762.54,1307.44
+ulb,Regresión logística,SMOTE,50–100,8.0,7.33,708.42,66.66
+ulb,Regresión logística,SMOTE,>1 000,1.33,1.0,1680.15,365.66
+ulb,Regresión logística,SMOTE,≤50,40.67,29.33,370.53,119.22
+ulb,Regresión logística,pesos,100–250,8.0,7.67,1355.87,69.53
+ulb,Regresión logística,pesos,250–1 000,9.67,7.0,4762.54,1307.44
+ulb,Regresión logística,pesos,50–100,8.0,7.33,708.42,66.66
+ulb,Regresión logística,pesos,>1 000,1.33,1.0,1680.15,365.66
+ulb,Regresión logística,pesos,≤50,40.67,30.0,370.53,103.45
+ulb,Regresión logística,sin_balanceo,100–250,8.0,6.67,1355.87,297.57
+ulb,Regresión logística,sin_balanceo,250–1 000,9.67,7.0,4762.54,1307.44
+ulb,Regresión logística,sin_balanceo,50–100,8.0,7.67,708.42,33.33
+ulb,Regresión logística,sin_balanceo,>1 000,1.33,1.0,1680.15,365.66
+ulb,Regresión logística,sin_balanceo,≤50,40.67,30.33,370.53,135.13
+ulb,XGBoost,SMOTE,100–250,8.0,7.0,1355.87,229.48
+ulb,XGBoost,SMOTE,250–1 000,9.67,7.0,4762.54,1307.44
+ulb,XGBoost,SMOTE,50–100,8.0,8.0,708.42,0.0
+ulb,XGBoost,SMOTE,>1 000,1.33,1.0,1680.15,365.66
+ulb,XGBoost,SMOTE,≤50,40.67,33.0,370.53,85.7
+ulb,XGBoost,pesos,100–250,8.0,7.67,1355.87,69.53
+ulb,XGBoost,pesos,250–1 000,9.67,7.0,4762.54,1307.44
+ulb,XGBoost,pesos,50–100,8.0,8.0,708.42,0.0
+ulb,XGBoost,pesos,>1 000,1.33,1.0,1680.15,365.66
+ulb,XGBoost,pesos,≤50,40.67,32.0,370.53,99.62
+ulb,XGBoost,sin_balanceo,100–250,8.0,7.33,1355.87,149.5
+ulb,XGBoost,sin_balanceo,250–1 000,9.67,7.0,4762.54,1307.44
+ulb,XGBoost,sin_balanceo,50–100,8.0,8.0,708.42,0.0
+ulb,XGBoost,sin_balanceo,>1 000,1.33,1.0,1680.15,365.66
+ulb,XGBoost,sin_balanceo,≤50,40.67,30.67,370.53,91.08
+ulb,Árbol de decisión,SMOTE,100–250,8.0,7.0,1355.87,229.48
+ulb,Árbol de decisión,SMOTE,250–1 000,9.67,6.67,4762.54,1546.49
+ulb,Árbol de decisión,SMOTE,50–100,8.0,8.0,708.42,0.0
+ulb,Árbol de decisión,SMOTE,>1 000,1.33,0.67,1680.15,810.66
+ulb,Árbol de decisión,SMOTE,≤50,40.67,29.67,370.53,94.55
+ulb,Árbol de decisión,pesos,100–250,8.0,7.0,1355.87,229.48
+ulb,Árbol de decisión,pesos,250–1 000,9.67,6.33,4762.54,1785.54
+ulb,Árbol de decisión,pesos,50–100,8.0,8.0,708.42,0.0
+ulb,Árbol de decisión,pesos,>1 000,1.33,1.0,1680.15,365.66
+ulb,Árbol de decisión,pesos,≤50,40.67,29.0,370.53,120.8
+ulb,Árbol de decisión,sin_balanceo,100–250,8.0,7.0,1355.87,229.48
+ulb,Árbol de decisión,sin_balanceo,250–1 000,9.67,6.0,4762.54,1899.76
+ulb,Árbol de decisión,sin_balanceo,50–100,8.0,8.0,708.42,0.0
+ulb,Árbol de decisión,sin_balanceo,>1 000,1.33,0.67,1680.15,810.66
+ulb,Árbol de decisión,sin_balanceo,≤50,40.67,27.67,370.53,133.38

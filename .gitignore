@@ -10,3 +10,4 @@ Thumbs.db
 
 # Predicciones de IEEE-CIS: contienen etiquetas y montos de datos de la competencia (no redistribuibles)
 resultados/predicciones/ieee_cis__*.npz
+resultados/predicciones/ieee_cis_grillaamp__*.npz

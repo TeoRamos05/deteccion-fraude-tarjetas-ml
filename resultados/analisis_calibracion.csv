@@ -1,0 +1,25 @@
+dataset,modelo,balanceo,tasa_real,p_media,brier
+ieee_cis,Random Forest,SMOTE,0.0348,0.07875,0.02804
+ieee_cis,Random Forest,pesos,0.0348,0.22478,0.07505
+ieee_cis,Random Forest,sin_balanceo,0.0348,0.04156,0.02583
+ieee_cis,Regresión logística,SMOTE,0.0348,0.1366,0.06022
+ieee_cis,Regresión logística,pesos,0.0348,0.33848,0.1635
+ieee_cis,Regresión logística,sin_balanceo,0.0348,0.05038,0.04463
+ieee_cis,XGBoost,SMOTE,0.0348,0.03948,0.02313
+ieee_cis,XGBoost,pesos,0.0348,0.17912,0.06624
+ieee_cis,XGBoost,sin_balanceo,0.0348,0.03216,0.02302
+ieee_cis,Árbol de decisión,SMOTE,0.0348,0.07449,0.03614
+ieee_cis,Árbol de decisión,pesos,0.0348,0.23654,0.11803
+ieee_cis,Árbol de decisión,sin_balanceo,0.0348,0.0343,0.02616
+ulb,Random Forest,SMOTE,0.00167,0.01067,0.00113
+ulb,Random Forest,pesos,0.00167,0.00358,0.00049
+ulb,Random Forest,sin_balanceo,0.00167,0.00164,0.0004
+ulb,Regresión logística,SMOTE,0.00167,0.08181,0.0256
+ulb,Regresión logística,pesos,0.00167,0.08043,0.024
+ulb,Regresión logística,sin_balanceo,0.00167,0.00166,0.00064
+ulb,XGBoost,SMOTE,0.00167,0.00364,0.0009
+ulb,XGBoost,pesos,0.00167,0.00177,0.00042
+ulb,XGBoost,sin_balanceo,0.00167,0.00152,0.00039
+ulb,Árbol de decisión,SMOTE,0.00167,0.03604,0.01678
+ulb,Árbol de decisión,pesos,0.00167,0.00552,0.00432
+ulb,Árbol de decisión,sin_balanceo,0.00167,0.00164,0.00053

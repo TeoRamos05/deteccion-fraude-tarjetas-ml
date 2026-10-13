@@ -1,7 +1,7 @@
 # Pipeline experimental – Detección de fraude con tarjeta de crédito
 
 Tesis de Maestría en Data Science & Business Analytics (UMECIT). Comparación de 4 modelos x 3 estrategias de
-balanceo en dos datasets abiertos de Kaggle (ULB e IEEE-CIS). Última actualización: 08/10/2026.
+balanceo en dos datasets abiertos de Kaggle (ULB e IEEE-CIS). Última actualización: 13/10/2026.
 
 ## Estado del proyecto
 | Elemento | Estado |
@@ -12,6 +12,11 @@ balanceo en dos datasets abiertos de Kaggle (ULB e IEEE-CIS). Última actualizac
 | Bootstrap e intervalos de confianza (`05_bootstrap.py`) | Hecho: B = 1000, 3 semillas por dataset |
 | Figuras y tabla final (`04_figuras.py`) | Hechas con las 72 predicciones (las de IEEE-CIS no se publican; ver más abajo) |
 | Sensibilidad del costo (`06_sensibilidad_costo.py`) | Hecha (costo administrativo y comercial) |
+| Caracterización de los datos (`07_caracterizacion.py`) | Hecha (`resultados/caracterizacion_*`, `car_*.png`) |
+| Análisis de errores (`08_analisis_errores.py`) | Hecho: calibración, captura en las alertas, fraudes por monto y umbral por costo (exploratorio) |
+| Figuras conceptuales (`09_figuras_conceptuales.py`) | Hechas (`fig_*.png`) |
+| Contraste SMOTE antes de dividir (`10_smote_antes_de_dividir.py`) | Hecho: 3 semillas en ULB (`smote_antes_de_dividir.csv`) |
+| Grilla ampliada en IEEE-CIS (`11_grilla_ampliada_ieee.py`) | Hecha: semilla 42 (`ieee_cis_grillaamp_*.csv`) |
 | Referencias | `referencias_verificadas.md` |
 
 
@@ -26,6 +31,11 @@ balanceo en dos datasets abiertos de Kaggle (ULB e IEEE-CIS). Última actualizac
 | `04_figuras.py` | Tabla final y figuras comparativas |
 | `05_bootstrap.py` | IC del 95 % del AUC-PR y contrastes pareados para H1 y H2 |
 | `06_sensibilidad_costo.py` | Sensibilidad del costo al costo de falso positivo (Ca) y al costo comercial (λ) |
+| `07_caracterizacion.py` | Caracterización de los conjuntos de datos (estructura, calidad, desbalance, montos, estabilidad temporal) |
+| `08_analisis_errores.py` | Calibración, captura en las alertas de mayor puntuación, fraudes no detectados por monto, curvas PR y umbral por costo (exploratorio) |
+| `09_figuras_conceptuales.py` | Figuras conceptuales (flujo, decisión del detector, SMOTE); no usan los datos |
+| `10_smote_antes_de_dividir.py` | Contraste: SMOTE aplicado a todo ULB antes de dividir (protocolo con fuga de información) |
+| `11_grilla_ampliada_ieee.py` | Sensibilidad de la grilla de hiperparámetros en IEEE-CIS (una semilla) |
 
 ## Datos (`data/`, no se publican en el repositorio)
 - `ulb/creditcard.csv`: Kaggle mlg-ulb/creditcardfraud (284 807 filas, 492 fraudes, 1 081 duplicados exactos).
@@ -43,6 +53,11 @@ python 03_ieee_cis.py 42 7 2024       # IEEE-CIS (sin argumentos usa solo 42 y 7
 python 05_bootstrap.py 1000           # requiere las predicciones de ULB e IEEE-CIS (las de IEEE-CIS se generan localmente)
 python 04_figuras.py
 python 06_sensibilidad_costo.py       # usa las predicciones disponibles localmente
+python 07_caracterizacion.py
+python 08_analisis_errores.py       # requiere resultados/predicciones/
+python 09_figuras_conceptuales.py
+python 10_smote_antes_de_dividir.py 42 7 2024   # contraste (ULB)
+python 11_grilla_ampliada_ieee.py 42  # sensibilidad de la grilla (IEEE-CIS; varias horas)
 ```
 Versiones usadas: Python 3.12.10, scikit-learn 1.9.1, imbalanced-learn 0.14.2, XGBoost 3.4.1, pandas 3.0.5,
 numpy 2.5.2, matplotlib 3.11.2, seaborn 0.13.2. No ejecutar los scripts con `python -I` (impide importar `common.py`).
@@ -53,7 +68,7 @@ competencia prohíben redistribuir los datos, y esos archivos contienen etiqueta
 reproducir los resultados de IEEE-CIS hay que descargar los datos de Kaggle, aceptar sus reglas y ejecutar
 `python 03_ieee_cis.py 42 7 2024` (varias horas); `05_bootstrap.py` y `06_sensibilidad_costo.py` leerán entonces las
 predicciones que se generen localmente. Los CSV de `resultados/` son agregados (métricas, intervalos y costos) y no contienen
-datos por transacción.
+datos por transacción. Tampoco se publican las predicciones de la grilla ampliada de IEEE-CIS (`ieee_cis_grillaamp__*.npz`), que se generan localmente.
 
 **Reanudación:** si el proceso se corta (ocurrió en una VDI), relanzar el mismo comando; las combinaciones con archivo
 en `resultados/predicciones/` se saltan.
@@ -82,6 +97,9 @@ predicciones (`.npz`) son por semilla y no se pisan; el bootstrap y la sensibili
 - H1 (ensambles > referencias): se cumple en ambos datasets; con más fuerza en IEEE-CIS (36 de 36 comparaciones con IC > 0)
   que en ULB (34 de 36).
 - H2 (SMOTE > sin balanceo): no se sostiene de forma general; solo Random Forest mejora en IEEE-CIS.
+- Contraste de protocolo: aplicar SMOTE a todo ULB antes de dividir lleva el AUC-PR a casi 1,0 (0,997 a 1,000 en la prueba completa) y lo infla
+  incluso en las filas reales de la prueba (Random Forest 0,976 y XGBoost 0,985, frente a 0,84 con el protocolo correcto): es fuga de información.
+- Grilla ampliada en IEEE-CIS (semilla 42): el AUC-PR cambia en promedio 0,01 (máximo 0,05); no cambian la mejor combinación ni el orden de los modelos.
 - Costo: el ranking es robusto a Ca entre 1 y 10; con costo comercial alto (λ = 1) en IEEE-CIS la mejor combinación no
   ahorra frente a no usar modelo, porque el umbral se eligió por F1.
 
