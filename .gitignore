@@ -1,0 +1,12 @@
+# Datos de Kaggle: no se redistribuyen (ver data/README.md)
+data/*
+!data/README.md
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+*.tmp
+Thumbs.db
+
+# Predicciones de IEEE-CIS: contienen etiquetas y montos de datos de la competencia (no redistribuibles)
+resultados/predicciones/ieee_cis__*.npz
