@@ -16,9 +16,6 @@ from experimento import correr
 
 D = BASE / "data" / "ieee_cis"
 SEEDS = [int(s) for s in sys.argv[1:]] or [42, 7]
-CATS = ["ProductCD", "card4", "card6", "P_emaildomain", "R_emaildomain", "DeviceType",
-        "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9"]
-
 tx = pd.read_csv(D / "train_transaction.csv")
 idt = pd.read_csv(D / "train_identity.csv", usecols=["TransactionID", "DeviceType"])
 df = tx.merge(idt, on="TransactionID", how="left").sort_values("TransactionDT").reset_index(drop=True)
@@ -32,7 +29,7 @@ n = len(X)
 i1, i2 = int(n * 0.70), int(n * 0.85)
 keep = X.columns[X.iloc[:i1].isna().mean() <= 0.60]  # criterio con train solamente
 X = X[keep]
-cats = [c for c in CATS if c in X.columns]
+cats = [c for c in X.columns if not pd.api.types.is_numeric_dtype(X[c])]
 for c in cats:
     cat = pd.Categorical(X[c].iloc[:i1]).categories
     X[c] = pd.Categorical(X[c], categories=cat).codes.astype("float32")

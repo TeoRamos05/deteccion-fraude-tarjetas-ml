@@ -42,7 +42,7 @@ python 02_modelado.py 42 7 2024       # ULB
 python 03_ieee_cis.py 42 7 2024       # IEEE-CIS (sin argumentos usa solo 42 y 7)
 python 05_bootstrap.py 1000           # requiere las predicciones de ULB e IEEE-CIS (las de IEEE-CIS se generan localmente)
 python 04_figuras.py
-python 06_sensibilidad_costo.py       # requiere resultados/predicciones/
+python 06_sensibilidad_costo.py       # usa las predicciones disponibles localmente
 ```
 Versiones usadas: Python 3.12.10, scikit-learn 1.9.1, imbalanced-learn 0.14.2, XGBoost 3.4.1, pandas 3.0.5,
 numpy 2.5.2, matplotlib 3.11.2, seaborn 0.13.2. No ejecutar los scripts con `python -I` (impide importar `common.py`).
@@ -74,6 +74,7 @@ predicciones (`.npz`) son por semilla y no se pisan; el bootstrap y la sensibili
 - Costo = monto de los fraudes no detectados + costo de cada falso positivo. Base: `COSTO_FP` = 5 unidades monetarias
   por falso positivo (supuesto; Bahnsen et al., 2013, usaron 2,50 EUR y probaron de 1 a 5). `06_sensibilidad_costo.py`
   usa costo de FP = Ca + λ·monto, con Ca en {1; 2,5; 5; 10} y λ en {0; 0,25; 1}. Los montos no se convierten de moneda.
+  Si faltan predicciones de un dataset, el script calcula los datasets disponibles y omite el faltante con un aviso.
 
 ## Resultados (AUC-PR medio entre semillas; detalle en `resultados/` y en el Capítulo IV)
 - ULB: XGBoost 0,84–0,86; Random Forest ≈ 0,84; regresión logística 0,73–0,76; árbol 0,64–0,77.

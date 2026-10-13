@@ -37,6 +37,11 @@ for f in sorted(PRED.glob("*.npz")):
                           escenario=nombre, costo=costo, sin_modelo=sin_modelo, FP=int(fp.sum()), FN=int(fn.sum())))
 
 d = pd.DataFrame(filas)
+if d.empty:
+    print("No hay predicciones disponibles en", PRED)
+    print("Ejecuta 02_modelado.py y, si corresponde, 03_ieee_cis.py antes de calcular la sensibilidad.")
+    raise SystemExit(0)
+
 g = d.groupby(["dataset", "escenario", "modelo", "balanceo"]).agg(
     costo=("costo", "mean"), sd=("costo", "std"), sin_modelo=("sin_modelo", "mean"), n_semillas=("semilla", "nunique")).reset_index()
 g["reduccion_vs_sin_modelo_pct"] = (1 - g.costo / g.sin_modelo) * 100
@@ -46,6 +51,9 @@ g.round(2).to_csv(OUT / "sensibilidad_costo.csv", index=False)
 orden = [e[0] for e in ESCENARIOS]
 for ds in ("ulb", "ieee_cis"):
     x = g[g.dataset == ds]
+    if x.empty:
+        print(f"\n=== {ds}: sin predicciones locales; se omite")
+        continue
     print(f"\n=== {ds}: costo sin modelo = {x.sin_modelo.iloc[0]:,.0f}")
     top = x[x.ranking == 1].set_index("escenario").loc[orden]
     print("Mejor combinación por escenario:")
